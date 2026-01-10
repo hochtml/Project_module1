@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+  </head>
+  <body>
+    <div class="register-container">
+           <!-- Register-Header -->
+         <header class="register-header">
+        <h2 class="title">Đăng ký tài khoản</h2>
+        <p class="desc">Đăng ký tài khoản để sử dụng dịch vụ</p>
+         </header> 
+      <form id="form-register">
+        <div class="register-content">
+           <!-- Register-Body -->
+        <div class="register-username">
+          <div class="register-surname">
+            <label class="register-label" for="">Họ và tên đệm</label>
+            <input id="surname" class="register-input" type="text" />
+            <!-- text -->
+             <div id="surnameError" style="color: red; font-size: 8px; display: none;">** Họ và tên đệm không được để trống</div>
+          </div>
+          <div class="register-surname">
+            <label class="register-label" for="">Tên</label>
+            <input id="username" class="register-input" type="text" />
+              <!-- text -->
+             <div id="usernameError" style="color: red; font-size: 8px; display: none;">** Tên không được để trống</div>
+          </div>
+        </div>
+        <div class="register-group">
+          <div class="register-body">
+            <label class="register-label" for="Email">Email</label>
+            <input id="email"
+              class="group-input"
+              type="text"
+              placeholder="you@company.com"
+            />
+             <!-- text -->
+             <div id="emailError" style="color: red; font-size: 8px; display: none;">** Email không được để trống</div>
+          </div>
+          <div class="register-body">
+            <label class="register-label" for="">Password</label>
+            <input id="password" class="group-input" type="password" />
+             <!-- text -->
+             <div id="passwordError" style="color: red; font-size: 8px; display: none;">** Password không được để trống</div>
+          </div>
+          <div class="register-body">
+            <label class="register-label" for="">Xác nhận mật khẩu</label>
+            <input id="confirm" class="group-input" type="password" />
+             <!-- text -->
+             <div id="confirmError" style="color: red; font-size: 8px; display: none;">** Password không được để trống</div>
+          </div>
+        </div>
+        <!-- checkbox -->
+        <div class="register-checkbox">
+          <input id="agree" class="checkbox" type="checkbox" />
+          <span>Bạn đồng ý với <a href="">chính sách và điều khoản</a></span>
+        </div>
+        <!-- text -->
+        <div id="agreeError" style="color: red; font-size: 8px; display: none;">** Vui lòng xác nhận đăng ký.</div>
+        <button id="submitBtn" type="submit" class="register-btn">Đăng Ký</button>
+        <!-- Register-Footer -->
+        <div class="register-footer">
+          <span>Bạn đã có tài khoản? <a href="./login.html">Đăng nhập</a></span>
+        </div>
+        </div>
+       </form>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="../js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/style.css">
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- MENU-SIDEBAR -->
+      <menu id="menu-component" class="menu"></menu>
+      <!-- MAIN -->
+      <div class="main">
+        <!--MAIN-HEADER  -->
+        <header class="header">
+          <div class="header-right">
+            <img
+              class="header-bell"
+              src="../category-img/bell.png"
+              alt="bell"
+            />
+             <a href="#">
+              <img
+                class="header-avatar"
+                src="../category-img/avatar.png"
+                alt="avatar"
+            /></a>
+          </div>
+        </header>
+        <!--MAIN-CONTENT  -->
+        <main class="main-content">
+          <!--  Header-->
+          <div class="content-header">
+            <h2 class="header-title">Thống kê</h2>
+            <button type="button" id="logoutBtn" class="header-btn">
+            <img src="../category-img/log out.png" alt="icon">
+            <span class="header-text">Log out</span>
+          </button>
+          </div>
+          
+        </main>
+        <!-- js -->
+         <script src="../js/dashboard.js"></script>
+         <script src="../js/mennu.js"></script>
+         <script>
+          document.querySelector("#menu-component").innerHTML= renderMenu("dashboard")
+         </script>
+  </body>
+</html>

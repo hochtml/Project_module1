@@ -1,0 +1,96 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#form-login {
+  width: 535px;
+}
+.form-header {
+  margin-bottom: 64px;
+}
+.title {
+  color: #090914;
+  font-weight: bold;
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+.desc {
+  font-weight: 400;
+  font-size: 18px;
+  color: #52525b;
+}
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.form-label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #090914;
+}
+.form-input {
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  padding: 0 16px;
+}
+.form-redirect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 34px;
+}
+.form-function {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.form-footer a,
+.form-redirect a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2563eb;
+}
+.form-checkbox {
+  width: 19px;
+  height: 19px;
+}
+.form-redirect span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #18181b;
+}
+.form-footer {
+  text-align: center;
+}
+.form-button {
+  padding: 16px;
+  border-radius: 9px;
+  width: 100%;
+  background: #2563eb;
+  margin-bottom: 34px;
+  color: #fff;
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.footer-redirect span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #64748b;
+}
+#agreeError {
+  margin-bottom: 22px;
+}

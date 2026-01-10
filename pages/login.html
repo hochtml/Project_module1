@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <form id="form-login">
+        <!-- Form-Header -->
+        <header class="form-header">
+          <h3 class="title">Đăng nhập</h3>
+          <p class="desc">Đăng nhập tài khoản để sử dụng hệ thống quản lý.</p>
+        </header>
+        <!-- Form-Body -->
+        <main class="form-body">
+          <div class="form-group">
+            <label class="form-label" for="">Email</label>
+            <input id="email" class="form-input" type="text" />
+            <!-- text -->
+            <div
+              id="emailError"
+              style="color: red; font-size: 10px; display: none"
+            >
+              ** Email không được để trống
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="">Mật khẩu</label>
+            <input id="password" class="form-input" type="password" />
+            <!-- text -->
+            <div
+              id="passwordError"
+              style="color: red; font-size: 10px; display: none"
+            >
+              ** Password không được để trống
+            </div>
+          </div>
+        </main>
+        <!-- form checkbox -->
+        <div class="form-redirect">
+          <div class="form-function">
+            <input id="agree" class="form-checkbox" type="checkbox" />
+            <span>Nhớ tài khoản</span>
+          </div>
+          <div>
+            <a href="">Quên mật khẩu?</a>
+          </div>
+        </div>
+        <!-- Form-Footer -->
+        <footer class="form-footer">
+          <button class="form-button">Đăng nhập</button>
+          <p class="footer-redirect">
+            <span
+              >Bạn chưa có tài khoản?<a href="./register.html">
+                Đăng ký</a
+              ></span
+            >
+          </p>
+        </footer>
+      </form>
+    </div>
+    <!-- js -->
+    <script src="../js/login.js"></script>
+  </body>
+</html>

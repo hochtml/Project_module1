@@ -1,0 +1,84 @@
+/* Đây là các style sẽ áp dụng chung cho các trang trong dự án */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+}
+:root {
+  --background-white: #ffffff;
+}
+.container {
+  display: flex;
+}
+
+.menu {
+  width: 240px;
+  background-color: #f6f8f9;
+  min-height: 100vh;
+}
+
+.menu .logo-image {
+  display: flex;
+  justify-content: center;
+  height: 56px;
+  align-items: center;
+}
+.menu-list {
+  padding: 16px;
+}
+
+.active,
+.active i {
+  background-color: #d7edff;
+  font-weight: 600;
+  color: #0e73f6 !important;
+}
+
+.list-link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+}
+
+.link-item {
+  height: 32px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.menu-title {
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.link-item:hover {
+  background-color: #d7edff;
+}
+.link-item i {
+  color: #3f3f46;
+}
+.overlay {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: #00000066;
+}

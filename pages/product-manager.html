@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product-Manager</title>
+    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- MENU-SIDEBAR -->
+      <menu id="menu-component" class="menu"></menu>
+      <!-- MAIN -->
+      <div class="main">
+        <!--MAIN-HEADER  -->
+        <header class="header">
+          <div class="header-right">
+            <img
+              class="header-bell"
+              src="../category-img/bell.png"
+              alt="bell"
+            />
+            <a href="#">
+              <img
+                class="header-avatar"
+                src="../category-img/avatar.png"
+                alt="avatar"
+            /></a>
+          </div>
+        </header>
+        <!--MAIN-CONTENT  -->
+        <main class="main-content">
+          <!--  Header-->
+          <div class="content-header">
+            <h2 class="title">Sản Phẩm</h2>
+            <button id="btnAdd" class="category-button">
+              Thêm mới sản phẩm
+            </button>
+          </div>
+          <!-- toolbar -->
+          <div class="content-toolbar">
+            <!-- select 1 -->
+            <select class="toolbar-select">
+              <option value="">Lọc theo danh mục</option>
+              <option value="1">Táo</option>
+              <option value="2">Cà chua</option>
+            </select>
+            <select class="toolbar-select">
+              <option value="">Lọc theo trạng thái</option>
+              <option value="all">Tất cả</option>
+              <option value="true">Đang hoạt động</option>
+              <option value="false">Ngừng hoạt động</option>
+            </select>
+            <!-- search -->
+            <div class="toolbar-search">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Tìm kiếm sản phẩm theo tên"
+              />
+              <img
+                class="search-item"
+                src="../category-img/search.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- List-Category -->
+          <div class="list-category">
+            <!-- Table -->
+            <table class="table" border="1">
+              <!-- theade-->
+              <thead class="thead">
+                <tr>
+                  <th class="thead-item">
+                    <span>Mã sản phẩm</span>
+                  </th>
+                  <th class="thead-item">
+                    <span>Tên sản phẩm</span>
+                    <img
+                      class="thead-icon"
+                      src="../category-img/arrow.png"
+                      alt=""
+                    />
+                  </th>
+                  <th class="thead-item">
+                    <span>Giá</span>
+                    <img
+                      class="thead-icon"
+                      src="../category-img/arrow.png"
+                      alt=""
+                    />
+                  </th>
+                  <th class="thead-item">Số lượng</th>
+                  <th class="thead-item">Giảm giá</th>
+                  <th class="thead-item">Trạng thái</th>
+                  <th class="thead-item">Chức năng</th>
+                </tr>
+              </thead>
+              <!-- TBody -->
+              <tbody id="body-form" class="tbody"></tbody>
+            </table>
+          </div>
+          <!-- Chân trang -->
+          <footer class="footer">
+            <div id="pagination"></div>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <!-- overlay -->
+    <form id="overlay" class="product-overlay">
+      <div class="product-modal">
+        <div class="product-modal-body">
+          <!-- heading -->
+          <div class="product-modal-heading">
+            <h2 class="product-modal-title">Thêm mới sản phẩm</h2>
+            <button id="closeBtn" class="product-btn">
+              <img src="../category-img/close.png" alt="close" />
+            </button>
+          </div>
+          <!-- 1 -->
+          <div class="product-modal-content">
+            <div class="product-item">
+              <label class="product-label" for=""
+                >Mã sản phẩm <span class="product-icon">*</span></label
+              >
+              <input id="productCode" class="product-input" type="text" />
+              <!-- text -->
+              <span id="errorProductCode" class="error-text"></span>
+            </div>
+            <div class="product-item">
+              <label class="product-label" for=""
+                >Tên sản phẩm <span class="product-icon">*</span></label
+              >
+              <input id="productName" class="product-input" type="text" />
+              <!-- text -->
+              <span id="errorProductName" class="error-text"></span>
+            </div>
+          </div>
+          <!-- product-category -->
+          <div class="product-category">
+            <div class="category-item">
+              <label class="product-label" for=""
+                >Danh mục <span class="product-icon">*</span></label
+              >
+              <select class="select-category">
+                <option value="">Điện thoại</option>
+                <option value="">Laptop</option>
+                <option value="">Tablet</option>
+              </select>
+            </div>
+            <!-- status -->
+            <div class="product-status">
+              <label class="product-label" for=""
+                >Trạng thái <span class="product-icon">*</span></label
+              >
+              <div class="product-status-content">
+                <div class="status-item">
+                  <input type="radio" name="active" value="ACTIVE" />
+                  <span>Đang hoạt động</span>
+                </div>
+                <div class="status-item">
+                  <input type="radio" name="active" value="INACTIVE" />
+                  <span>Ngừng hoạt động</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- price -->
+          <div class="product-price">
+            <div class="price">
+              <label class="price-label" for="">Số lượng</label>
+              <input id="stock" class="price-input" type="number" value="1" />
+            </div>
+            <div class="price">
+              <label class="price-label" for="">Giá</label>
+              <input
+                id="price"
+                class="price-input"
+                type="number"
+                value="10000000"
+              />
+            </div>
+            <div class="price">
+              <label class="price-label" for="">Giảm giá</label>
+              <input
+                id="discount"
+                class="price-input"
+                type="number"
+                value="10"
+              />
+            </div>
+          </div>
+
+          <!-- Img -->
+          <div class="product-link">
+            <label class="price-label" for=""
+              >Hình ảnh <span class="product-icon">*</span>
+            </label>
+            <input
+              class="link-input"
+              id="image"
+              type="text"
+              value="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg"
+            />
+          </div>
+        </div>
+        <!-- <!-.product-detail-->
+        <div class="product-detail">
+          <label class="detail-label" for="">Chi tiết sản phẩm</label>
+          <input id="description" class="detail-input" type="text" />
+        </div>
+        <!-- border-bottom-->
+        <div class="border-bottom"></div>
+        <!-- modal-button -->
+        <div class="product-button">
+          <button type="button" id="deleteBtn" class="product-delete">
+            Hủy
+          </button>
+          <button type="submit" id="btnSave" class="product-edit">Thêm</button>
+        </div>
+      </div>
+    </form>
+    <!-- js -->
+    <script src="../js/product-manager.js"></script>
+    <script src="../js/mennu.js"></script>
+    <script>
+      document.querySelector("#menu-component").innerHTML =
+        renderMenu("product-manager");
+    </script>
+  </body>
+</html>
