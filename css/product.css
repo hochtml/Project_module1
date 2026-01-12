@@ -46,14 +46,14 @@
   font-weight: 600;
   font-size: 14px;
   color: #f6f8f9;
-  background-color: #4094f7;
   border: 1px solid transparent;
-  cursor: pointer;
   padding: 8px 10px 8px 12px;
+  background-color: blue;
 }
 .category-button:hover {
-  background-color: blue;
+  cursor: pointer;
   transition: all 0.5s linear;
+  background-color: rgb(54, 54, 237);
 }
 /* <!-- toolbar --> */
 .content-toolbar {
@@ -207,10 +207,6 @@
   margin-bottom: 24px;
   cursor: pointer;
 }
-.footer .button-active {
-  background-color: #0066ff;
-  color: #ffffff;
-}
 /* Overlay */
 .product-overlay {
   position: fixed;
@@ -221,7 +217,7 @@
   align-items: center;
   justify-content: center;
 }
-.product-modal {
+.form {
   width: 900px;
   max-width: calc(100% - 32px);
   max-height: 90vh;
@@ -281,11 +277,6 @@
   font-weight: 600;
   font-size: 16px;
   color: #000000;
-}
-.error-text {
-  color: red;
-  font-size: 13px;
-  display: none;
 }
 /*<!-- product-category --> */
 .product-category {
@@ -413,4 +404,15 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+}
+.error-border {
+  border: 1px solid red;
+}
+.error-text {
+  color: red;
+  font-size: 13px;
+}
+button.activeFooter {
+  background-color: blue;
+  color: #ffffff;
 }

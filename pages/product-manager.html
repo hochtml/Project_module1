@@ -41,23 +41,35 @@
           <!--  Header-->
           <div class="content-header">
             <h2 class="title">Sản Phẩm</h2>
-            <button id="btnAdd" class="category-button">
+            <button
+              onclick="handleShowModal()"
+              type="button"
+              class="category-button"
+            >
               Thêm mới sản phẩm
             </button>
           </div>
           <!-- toolbar -->
           <div class="content-toolbar">
             <!-- select 1 -->
-            <select class="toolbar-select">
-              <option value="">Lọc theo danh mục</option>
-              <option value="1">Táo</option>
-              <option value="2">Cà chua</option>
+            <select
+              onchange="handleByCategory(this.value)"
+              class="toolbar-select"
+            >
+              <option>Lọc theo danh mục</option>
+              <option value="all">Tất Cả</option>
+              <option value="Điện Thoại">Điện Thoại</option>
+              <option value="Laptop">Laptop</option>
+              <option value="Tablet">Tablet</option>
             </select>
-            <select class="toolbar-select">
+            <select
+              onchange="handleByStatus(this.value)"
+              class="toolbar-select"
+            >
               <option value="">Lọc theo trạng thái</option>
               <option value="all">Tất cả</option>
-              <option value="true">Đang hoạt động</option>
-              <option value="false">Ngừng hoạt động</option>
+              <option value="active">Đang hoạt động</option>
+              <option value="inactive">Ngừng hoạt động</option>
             </select>
             <!-- search -->
             <div class="toolbar-search">
@@ -106,10 +118,10 @@
                 </tr>
               </thead>
               <!-- TBody -->
-              <tbody id="body-form" class="tbody"></tbody>
+              <tbody id="tbody" class="tbody"></tbody>
             </table>
           </div>
-          <!-- Chân trang -->
+          <!-- Phân trang -->
           <footer class="footer">
             <div id="pagination"></div>
           </footer>
@@ -117,14 +129,18 @@
       </div>
     </div>
     <!-- overlay -->
-    <form id="overlay" class="product-overlay">
-      <div class="product-modal">
+    <div class="product-overlay" style="display: none" id="product-form">
+      <form id="form-modal" class="form" onsubmit="handleSubmit(event)">
         <div class="product-modal-body">
           <!-- heading -->
           <div class="product-modal-heading">
             <h2 class="product-modal-title">Thêm mới sản phẩm</h2>
-            <button id="closeBtn" class="product-btn">
-              <img src="../category-img/close.png" alt="close" />
+            <button type="button" class="product-btn">
+              <img
+                onclick="handleCloseModal()"
+                src="../category-img/close.png"
+                alt="close"
+              />
             </button>
           </div>
           <!-- 1 -->
@@ -133,17 +149,17 @@
               <label class="product-label" for=""
                 >Mã sản phẩm <span class="product-icon">*</span></label
               >
-              <input id="productCode" class="product-input" type="text" />
+              <input id="product-code" class="product-input" type="text" />
               <!-- text -->
-              <span id="errorProductCode" class="error-text"></span>
+              <span id="productCodeError" class="error-text"></span>
             </div>
             <div class="product-item">
               <label class="product-label" for=""
                 >Tên sản phẩm <span class="product-icon">*</span></label
               >
-              <input id="productName" class="product-input" type="text" />
+              <input id="product-name" class="product-input" type="text" />
               <!-- text -->
-              <span id="errorProductName" class="error-text"></span>
+              <span id="productNameError" class="error-text"></span>
             </div>
           </div>
           <!-- product-category -->
@@ -152,10 +168,14 @@
               <label class="product-label" for=""
                 >Danh mục <span class="product-icon">*</span></label
               >
-              <select class="select-category">
-                <option value="">Điện thoại</option>
-                <option value="">Laptop</option>
-                <option value="">Tablet</option>
+              <select
+                onchange="handleByCategory(this.value)"
+                class="select-category"
+              >
+                <option value="all">Tất cả</option>
+                <option value="Điện thoại">Điện thoại</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Tablet">Tablet</option>
               </select>
             </div>
             <!-- status -->
@@ -165,11 +185,11 @@
               >
               <div class="product-status-content">
                 <div class="status-item">
-                  <input type="radio" name="active" value="ACTIVE" />
+                  <input checked type="radio" name="status" value="active" />
                   <span>Đang hoạt động</span>
                 </div>
                 <div class="status-item">
-                  <input type="radio" name="active" value="INACTIVE" />
+                  <input type="radio" name="status" value="inactive" />
                   <span>Ngừng hoạt động</span>
                 </div>
               </div>
@@ -179,7 +199,12 @@
           <div class="product-price">
             <div class="price">
               <label class="price-label" for="">Số lượng</label>
-              <input id="stock" class="price-input" type="number" value="1" />
+              <input
+                id="quantity"
+                class="price-input"
+                type="number"
+                value="1"
+              />
             </div>
             <div class="price">
               <label class="price-label" for="">Giá</label>
@@ -187,7 +212,7 @@
                 id="price"
                 class="price-input"
                 type="number"
-                value="10000000"
+                value="100000"
               />
             </div>
             <div class="price">
@@ -223,15 +248,19 @@
         <div class="border-bottom"></div>
         <!-- modal-button -->
         <div class="product-button">
-          <button type="button" id="deleteBtn" class="product-delete">
+          <button
+            onclick="handleCloseModal()"
+            type="button"
+            class="product-delete"
+          >
             Hủy
           </button>
-          <button type="submit" id="btnSave" class="product-edit">Thêm</button>
+          <button class="product-edit">Thêm</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
     <!-- js -->
-    <script src="../js/product-manager.js"></script>
+    <script src="../js/product.js"></script>
     <script src="../js/mennu.js"></script>
     <script>
       document.querySelector("#menu-component").innerHTML =
