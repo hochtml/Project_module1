@@ -78,6 +78,8 @@ function handleSubmit(event) {
   // Lưu tât cả dữ liệu vào 1 mang đối tượng mới
   let newProduct = {
     id: Math.ceil(Math.random() * 10000),
+    // .trim() Nó xóa tất cả khoảng trắng thừa ở đầu và cuối chuỗi,
+    // nhưng không xóa khoảng trắng ở giữa.
     code: productCode.value.trim(),
     name: productName.value.trim(),
     status: productStatusValue,
@@ -240,9 +242,12 @@ function handleByStatus(status = "all") {
 }
 //Hàm lọc danh mục
 function handleByCategory(category = "all") {
+  // category === "all"
+  // Nếu đúng, nghĩa là người dùng muốn hiển thị tất cả sản phẩm, nên gán toàn bộ mảng products cho isCategory.
   const isCategory =
+    // Nếu category khác "all", thì lọc sản phẩm theo danh mục
     category === "all"
-      ? products
+      ? products // Phần bên phải dùng toán tử 3 ngôi (? :) để kiểm tra điều kiện
       : products.filter((item) => item.category === category);
   renderProduct(isCategory);
 }

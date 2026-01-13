@@ -58,7 +58,7 @@ formRegister.addEventListener("submit", function (e) {
     if (!validateEmail(emailElement.value)) {
       // Hiển thị lỗi lên.
       emailError.style.display = "block";
-      emailError.innerHTML = "** Email không đúng định dạng.";
+      emailError.innerHTML = "Email không đúng định dạng.";
     }
   }
   if (!passwordElement.value) {
@@ -71,7 +71,7 @@ formRegister.addEventListener("submit", function (e) {
     const newPassword = passwordElement.value.trim();
     if (newPassword.length < 8) {
       passwordError.style.display = "block";
-      passwordError.innerHTML = "** Mật khẩu phâi it nhât 8 ký tự.";
+      passwordError.innerHTML = "Mật khẩu phải ít nhât 8 ký tự.";
     }
   }
   if (!confirmElement.value) {
@@ -84,14 +84,13 @@ formRegister.addEventListener("submit", function (e) {
     const newConfirm = confirmElement.value.trim();
     if (newConfirm.length < 8) {
       confirmError.style.display = "block";
-      confirmError.innerHTML = "** Mật khẩu phâi it nhât 8 ký tự.";
+      confirmError.innerHTML = "Mật khẩu phâi it nhât 8 ký tự.";
     }
   }
   // Kiểm tra mật khẩu có trùng nhau không.
   if (passwordElement.value !== confirmElement.value) {
     confirmError.style.display = "block";
-    confirmError.innerHTML =
-      "** Mật khẩu không trùng nhau , Vui lòng nhập lại !!";
+    confirmError.innerHTML = "Mật khẩu không trùng nhau , Vui lòng nhập lại !!";
   }
   if (!agreeElement.checked) {
     agreeError.style.display = "block";
@@ -123,7 +122,7 @@ formRegister.addEventListener("submit", function (e) {
     //Luu trữ dữ liệu lên local
     localStorage.setItem("users", JSON.stringify(userLocal));
     // Đăng ký thành công
-    alert("Đăng ký thành công 🎉");
+    alert("Đăng ký thành công ");
     setTimeout(function () {
       //Chuyển huóng về trang đang nhập.
       window.location.href = "login.html";
